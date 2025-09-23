@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic AI Suitability Framework</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #e3f2fd;
+            color: #212121;
+            margin: 0;
+            padding: 40px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1a237e;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+
+        .section-header {
+            font-size: 2em;
+            color: #3949ab;
+            border-bottom: 4px solid #3f51b5;
+            padding-bottom: 12px;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .factor-card {
+            background-color: #f5f8ff;
+            border-left: 6px solid #3f51b5;
+            border-radius: 10px;
+            padding: 25px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .factor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .factor-title {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #1a237e;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .factor-title i {
+            font-size: 1.4em;
+            color: #3f51b5;
+            margin-right: 15px;
+            width: 35px;
+            text-align: center;
+        }
+
+        .scenario, .risk, .alternative, .mitigation {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .scenario::before, .risk::before, .alternative::before, .mitigation::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #42a5f5;
+        }
+
+        .risk::before { background-color: #ef5350; }
+        .alternative::before { background-color: #66bb6a; }
+        .mitigation::before { background-color: #26a69a; }
+
+        .label {
+            font-weight: 700;
+            color: #424242;
+            margin-right: 8px;
+            font-size: 1.1em;
+        }
+
+        .label.red { color: #d32f2f; }
+        .label.green { color: #388e3c; }
+        .label.blue { color: #1565c0; }
+        
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 style="text-align: center;">Agentic AI Suitability Framework</h1>
+    <h2 class="section-header">1. Business Value</h2>
+    <div class="grid-container">
+
+        <!-- Business Value -->
+        <div class="factor-card">
+            <h3 class="factor-title"><i class="fas fa-dollar-sign"></i>Cost</h3>
+            <p class="scenario"><span class="label">Scenario:</span> A financial firm uses an agent for high-frequency trading decisions, leading to continuous, high API usage and computational expenses.</p>
+            <p class="risk"><span class="label red">Risk:</span> Runaway operational costs that quickly outweigh the business value, especially in always-on or data-intensive workflows.</p>
+            <p class="alternative"><span class="label green">Alternative:</span> Use a lightweight, rules-based system or traditional algorithmic trading models that are more cost-effective for high-volume tasks.</p>
+            <p class="mitigation"><span class="label blue">Mitigation:</span> Implement cost-governance controls, such as budget caps, API call limits, and mandatory human approval for transactions above a certain threshold.</p>
+        </div>
+
+        <div class="factor-card">
+            <h3 class="factor-title"><i class="far fa-clock"></i>Time Efficiency</h3>
+            <p class="scenario"><span class="label">Scenario:</span> An AI agent automates a complex customer onboarding process, but its latency in integrating with various systems causes delays and a poor user experience.</p>
+            <p class="risk"><span class="label red">Risk:</span> The agent's latency and slow throughput can negate the benefits of automation, leading to customer frustration and missed deadlines.</p>
+            <p class="alternative"><span class="label green">Alternative:</span> Use a streamlined Robotic Process Automation (RPA) tool for specific, low-latency tasks like data entry, or optimize the backend system integrations.</p>
+            <p class="mitigation"><span class="label blue">Mitigation:</span> Optimize the agent's architecture for faster response times, and restrict its role to asynchronous tasks where latency isn't a critical factor.</p>
+        </div>
+        
+        <div class="factor-card">
+            <h3 class="factor-title"><i class="fas fa-check-circle"></i>Accuracy & Quality</h3>
+            <p class="scenario"><span class="label">Scenario:</span> A medical diagnostic agent, trained on a biased dataset, provides inaccurate diagnoses, leading to incorrect treatment plans and increased liability.</p>
+            <p class="risk"><span class="label red">Risk:</span> Increased error rates and lack of consistency can lead to poor quality, non-compliance, and significant reputational and legal risks.</p>
+            <p class="alternative"><span class="label green">Alternative:</span> Rely on a human-in-the-loop workflow where the AI provides a second opinion or a structured report for a human expert to review and approve.</p>
+            <p class="mitigation"><span class="label blue">Mitigation:</span> Implement robust data quality gates and continuous monitoring to ensure the agent uses accurate, unbiased data. Regularly audit the agent's decisions against a benchmark for consistency.</p>
+        </div>
+        
+        <div class="factor-card">
+            <h3 class="factor-title"><i class="fas fa-chart-line"></i>Productivity & Scalability</h3>
+            <p class="scenario"><span class="label">Scenario:</span> A small business uses an AI agent to handle all customer support inquiries, but the agent's limited automation coverage forces staff to handle a large volume of complex tickets.</p>
+            <p class="risk"><span class="label red">Risk:</span> The agent may not be scalable, as it requires human intervention for a high percentage of tasks, leading to the same productivity bottlenecks it was meant to solve.</p>
+            <p class="alternative"><span class="label green">Alternative:</span> Use a simpler AI tool for specific, highly automatable tasks (e.g., password resets) and gradually expand its scope.</p>
+            <p class="mitigation"><span class="label blue">Mitigation:</span> Increase automation coverage by continuously training the agent on new data and using feedback loops to handle a wider variety of inquiries, reducing the human workload over time.</p>
+        </div>
+
+        <div class="factor-card">
+            <h3 class="factor-title"><i class="fas fa-lightbulb"></i>Strategic/Opportunity Impact</h3>
+            <p class="scenario"><span class="label">Scenario:</span> A retail company deploys an agent to recommend products, but its recommendations are generic, failing to provide a competitive edge or enable a new business model.</p>
+            <p class="risk"><span class="label red">Risk:</span> The agent fails to provide a competitive advantage or enable innovation, leading to a poor return on investment and a missed market opportunity.</p>
+            <p class="alternative"><span class="label green">Alternative:</span> Focus on using a non-agentic recommendation engine that provides personalized suggestions based on structured data and customer profiles.</p>
+            <p class="mitigation"><span class="label blue">Mitigation:</span> Align the agent with a core business strategy, such as enabling dynamic pricing or creating a new service line, to ensure it delivers a significant competitive advantage.</p>
+        </div>
+
+        <div class="factor-card">
+            <h3 class="factor-title"><i class="fas fa-eye"></i>Transparency</h3>
+            <p class="scenario"><span class="label">Scenario:</span> An AI agent denies a user's credit card application without providing a reason, leading to a customer complaint and a potential regulatory violation.</p>
+            <p class="risk"><span class="label red">Risk:</span> The lack of traceable reasoning can lead to customer mistrust and non-compliance with regulations that require explainable decisions.</p>
+            <p class="alternative"><span class="label green">Alternative:</span> Use a traditional, transparent scoring model with clear, verifiable criteria for decision-making.</p>
+            <p class="mitigation"><span class="label blue">Mitigation:</span> Implement decision logging and explanation layers that store the agent's reasoning steps, allowing for a human-readable justification and a clear audit trail.</p>
+        </div>
+        
+        <div class="factor-card">
+            <h3 class="factor-title"><i class="fas fa-heartbeat"></i>Human Impact</h3>
+            <p class="scenario"><span class="label">Scenario:</span> A funeral home uses an AI agent to handle bereavement counseling and grief support for clients, which causes emotional distress and damages the company's reputation.</p>
+            <p class="risk"><span class="label red">Risk:</span> The inability to replicate empathy and build trust can harm customer relationships and tarnish brand reputation, especially in sensitive situations.</p>
+            <p class="alternative"><span class="label green">Alternative:</span> Use the AI as a support tool for human counselors, providing quick facts or preparing case summaries, while a human leads the conversation and provides emotional support.</p>
+            <p class="mitigation"><span class="label blue">Mitigation:</span> Define clear boundaries for the agent, setting rules to escalate emotionally charged or sensitive topics to a human, ensuring oversight in all final communications.</p>
+        </div>
+
+    </div>
+
+    <h2 class="section-header">2. Technical Fit</h2>
+    <div class="grid-container">
+
+        <!-- Technical Fit -->
+        <div class="factor-card">
+            <h3 class="factor-title"><i class="fas fa-cogs"></i>Integration Complexity</h3>
+            <p class="scenario"><span class="label">Scenario:</span> A logistics company tries to integrate an AI agent into 15 different legacy systems for shipment tracking, customs, and invoicing.</p>
+            <p class="risk"><span class="label red">Risk:</span> Unstable performance and high costs due to data mismatches, delays, and complex maintenance across disparate platforms.</p>
+            <p class="alternative"><span class="label green">Alternative:</span> Start with point-specific automation, such as an AI-assisted invoice processing tool, before attempting multi-system autonomy.</p>
+            <p class="mitigation"><span class="label blue">Mitigation:</span> Adopt a modular integration strategy by connecting the agent through APIs or middleware that can be swapped without reconfiguring all legacy systems at once.</p>
+        </div>
+
+        <div class="factor-card">
+            <h3 class="factor-title"><i class="fas fa-tachometer-alt"></i>Real-time data</h3>
+            <p class="scenario"><span class="label">Scenario:</span> An AI agent is used to control a manufacturing robot on a high-speed assembly line, making split-second adjustments based on sensor data.</p>
+            <p class="risk"><span class="label red">Risk:</span> Safety hazards and production losses due to LLM-based decision-making latency, which cannot reliably process millisecond-level events.</p>
+            <p class="alternative"><span class="label green">Alternative:</span> Use a dedicated, low-latency control system (e.g., a PLC) or an edge AI model optimized for deterministic performance.</p>
+            <p class="mitigation"><span class="label blue">Mitigation:</span> Limit the agent's role to offline optimization, such as analyzing production logs to suggest efficiency improvements, rather than directly controlling real-time actions.</p>
+        </div>
+
+        <div class="factor-card">
+            <h3 class="factor-title"><i class="fas fa-compass"></i>Autonomy & Goal-Orientation</h3>
+            <p class="scenario"><span class="label">Scenario:</span> A rule-based agent is tasked with planning a marketing campaign, but it gets stuck because it can only follow a fixed script without adapting to new information or goals.</p>
+            <p class="risk"><span class="label red">Risk:</span> The system's lack of autonomy prevents it from handling dynamic or novel situations, requiring constant human intervention.</p>
+            <p class="alternative"><span class="label green">Alternative:</span> Use a traditional AI model for a single, rule-bound task, or rely on a human to handle all multi-step planning.</p>
+            <p class="mitigation"><span class="label blue">Mitigation:</span> Design the agent to be goal-driven with the ability to choose its own strategy and adapt its plan based on new information, rather than just following a predefined script.</p>
+        </div>
+
+        <div class="factor-card">
+            <h3 class="factor-title"><i class="fas fa-brain"></i>Statefulness & Memory</h3>
+            <p class="scenario"><span class="label">Scenario:</span> An AI customer support agent fails to recognize a returning customer, forcing the customer to repeat their past issues and preferences in every interaction.</p>
+            <p class="risk"><span class="label red">Risk:</span> The agent’s stateless nature and lack of memory lead to disjointed conversations, poor user experience, and a failure to build long-term relationships.</p>
+            <p class="alternative"><span class="label green">Alternative:</span> Use a chatbot that can only remember context for a single session, or rely on a human agent to access and recall all customer history.</p>
+            <p class="mitigation"><span class="label blue">Mitigation:</span> Implement durable, structured memory that allows the agent to recall a user's past actions, preferences, and long-term history to provide continuous and personalized service.</p>
+        </div>
+
+    </div>
+
+    <h2 class="section-header">3. Security & Governance</h2>
+    <div class="grid-container">
+
+        <!-- Security & Governance -->
+        <div class="factor-card">
+            <h3 class="factor-title"><i class="fas fa-shield-alt"></i>Governance Requirements</h3>
+            <p class="scenario"><span class="label">Scenario:</span> A startup’s sales agent autonomously emails prospects without rules on tone, frequency, or audience, accidentally spamming VIP clients with irrelevant offers.</p>
+            <p class="risk"><span class="label red">Risk:</span> The lack of governance allows the agent to violate company policies and ethical standards, leading to reputational damage and legal issues.</p>
+            <p class="alternative"><span class="label green">Alternative:</span> Create a human-led approval workflow for all outbound actions until a clear governance framework is in place.</p>
+            <p class="mitigation"><span class="label blue">Mitigation:</span> Implement agent policy enforcement through rules, monitoring dashboards, and human-in-the-loop checkpoints for high-impact actions.</p>
+        </div>
+        
+        <div class="factor-card">
+            <h3 class="factor-title"><i class="fas fa-lock"></i>Security Implications</h3>
+            <p class="scenario"><span class="label">Scenario:</span> An AI agent is given broad access to a company's sensitive systems, and a malicious prompt tricks it into extracting confidential data.</p>
+            <p class="risk"><span class="label red">Risk:</span> The agent's access to sensitive systems creates new attack surfaces, making the organization vulnerable to data breaches and exploitation.</p>
+            <p class="alternative"><span class="label green">Alternative:</span> Keep critical security processes manual or semi-automated with multi-factor human verification.</p>
+            <p class="mitigation"><span class="label blue">Mitigation:</span> Enforce strict role-based access control, sandbox the agent to limit its access to sensitive data, and add anomaly detection to flag suspicious requests.</p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
