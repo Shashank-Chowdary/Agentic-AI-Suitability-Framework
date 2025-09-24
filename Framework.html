@@ -209,6 +209,13 @@
             <p class="alternative"><span class="label green">Alternative:</span> Use a traditional AI model for a single, rule-bound task, or rely on a human to handle all multi-step planning.</p>
             <p class="mitigation"><span class="label blue">Mitigation:</span> Design the agent to be goal-driven with the ability to choose its own strategy and adapt its plan based on new information, rather than just following a predefined script.</p>
         </div>
+        <div class="factor-card">
+            <h3 class="factor-title"><i class="fas fa-tasks"></i>Task Complexity & Decomposition</h3>
+            <p class="scenario"><span class="label">Scenario:</span> An agent is tasked with writing a detailed project proposal, a complex task that requires outlining goals, breaking down tasks, and generating a budget. It struggles to complete the full task and generates a fragmented or incomplete document.</p>
+            <p class="risk"><span class="label red">Risk:</span> The agent fails to perform complex tasks that require multi-step planning and interdependent reasoning, resulting in incomplete outputs and the need for significant human rework.</p>
+            <p class="alternative"><span class="label green">Alternative:</span> Use the agent for single, well-defined sub-tasks (e.g., generating a list of project milestones) while a human performs the overarching decomposition and planning.</p>
+            <p class="mitigation"><span class="label blue">Mitigation:</span> Design the agent to decompose a complex task into smaller, manageable sub-tasks. Implement a feedback loop that allows the agent to self-correct its plan based on the results of each sub-task, ensuring a coherent final output.</p>
+        </div>
 
         <div class="factor-card">
             <h3 class="factor-title"><i class="fas fa-brain"></i>Statefulness & Memory</h3>
